@@ -173,7 +173,7 @@ const Timelines: React.FC = () => {
                   ></span>
                 </div>
                 {/* 清除第一階段的eventDot */}
-                {item.year !== "2014" && (
+                {item.year !== "1994" && (
                   <span
                     onClick={() => {
                       handleClick(timeIndex)
@@ -205,7 +205,7 @@ const Timelines: React.FC = () => {
                   ></span>
                 </div>
                 {/* 清除第一階段的eventDot */}
-                {item.year !== "2017" && (
+                {item.year !== "1997" && (
                   <span
                     key={timeIndex}
                     onClick={() => {
@@ -268,13 +268,13 @@ const Timelines: React.FC = () => {
                   </time>
                   <h3 className="mt-2.5 font-medium">{item.title}</h3>
                 </div>
-                {/* {item.image && (
+                {item.image && (
                   <img
                     className="object-cover h-[137px]"
-                    src={item.image?.src}
+                    src={item.image}
                     alt={item.title}
                   />
-                )} */}
+                )}
                 {item.content && (
                   <p className="leading-[1.75] tracking-[1.44px]">
                     {item.content}
