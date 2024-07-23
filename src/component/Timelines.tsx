@@ -131,9 +131,9 @@ const Timelines: React.FC = () => {
     }
   }, [])
   useEffect(() => {
-    const currentCardIndex = Math.floor(scrollValue / cardWidth)
+    const currentCardIndex = Math.floor(scrollValue / cardWidth)-1
     setCurrentCardYear(timeLineData[currentCardIndex].year)
-  }, [scrollValue])
+  }, [scrollValue,timeLineData])
   return (
     <div>
       {/* 時間軸 */}
@@ -254,11 +254,11 @@ const Timelines: React.FC = () => {
             return (
               <div
                 key={cardIndex + item.title}
-                className={`cardContainer flex flex-col gap-[17.5px] ${cardIndex % 2 === 0 ? "bg-[rgb(244,244,244)]" : "bg-white"} ${cardIndex === 0 && "hidden"}`}
+                className={`cardContainer flex flex-col gap-[17.5px] ${cardIndex % 2 === 0 ? "bg-[rgb(244,244,244)]" : "bg-white"}`}
               >
                 <div
-                  className={`flex gap-[17.5px] transition-all duration-300 ${addCssWithScroll(cardIndex - 1, item.stage, "year")}`}
-                >
+                  className={`flex gap-[17.5px] transition-all duration-300 ${addCssWithScroll(cardIndex, item.stage, "year")}`}
+                > 
                   <time
                     className="flex flex-col items-center"
                     dateTime={item.year + "-" + item.month}
